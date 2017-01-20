@@ -22,7 +22,6 @@ class Trie:
 
     for letter, next_node in node.links.items():
       if next_node.terminator: words.append(fragment + letter)
-
       for word in self.find_words(fragment + letter, next_node):
         words.append(word)
 
@@ -30,18 +29,25 @@ class Trie:
 
   def suggest(self, fragment):
     node = self.node_finder(fragment)
+    if not node: return []
     return self.find_words(fragment, node)
 
   def node_finder(self, fragment, node = None,):
     if not node: node = self.root
 
-    if node.includes_letter(fragment[0]):
-      next_node = node.links[fragment[0]]
-      if len(fragment) == 1: return next_node
-      self.node_finder(fragment[1:], next_node)
-    else: return None
+    counter = 0
+    for letter in fragment:
+      if node.includes_letter(fragment[counter]):
+        node = node.links[fragment[counter]]
+        counter += 1
+        if counter == len(fragment): return node
+      else: return None
+
+    return node
+      
 
   def populate(self, file):
     dictionary_file = open(file, 'r')
     for word in dictionary_file.readlines():
       self.insert(word)
+      
