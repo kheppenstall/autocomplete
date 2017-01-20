@@ -49,5 +49,5 @@ class Trie:
   def populate(self, file):
     dictionary_file = open(file, 'r')
     for word in dictionary_file.readlines():
-      self.insert(word)
+      self.insert(word.rstrip('\n'))
       
