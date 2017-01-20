@@ -19,7 +19,7 @@ Follow these steps to try it out in the command line (make sure you have Python 
     trie.populate('words.txt')    
     ```
 1. Type `trie.suggest(fragment)` to see your suggested completions to the fragment.
-(for example, `completion.suggest('aar') => ["aardvark", "aardwolf"]`
+(for example, `completion.suggest('aar') => ["aardwolf", "aardvark"]`
 
 Follow these steps to run the tests:
 
