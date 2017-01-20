@@ -10,3 +10,6 @@ class Node:
   def make_terminator(self):
     self.terminator = True
 
+  def includes_letter(self, letter):
+    return letter in list(self.links.keys())
+

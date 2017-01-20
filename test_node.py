@@ -33,3 +33,9 @@ class NodeTestCase(unittest.TestCase):
     node.add_link('b')
     node.links['b'].add_link('c')
     self.assertEqual('c', node.links['b'].links['c'].letter)
+
+  def test_node_knows_if_it_includes_a_letter(self):
+    node = Node('')
+    node.add_link('b')
+    self.assertTrue(node.includes_letter('b'))
+    self.assertFalse(node.includes_letter('c'))

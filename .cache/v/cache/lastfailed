@@ -1,1 +1,3 @@
-{}
+{
+  "test_trie.py::TrieTestCase::test_it_populates_file": true
+}
