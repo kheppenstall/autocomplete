@@ -1,4 +1,4 @@
-# Autcomplete Function
+# Python Autcomplete Function
 David and Kyle's autocomplete project to practice Python.
 
 User can enter the beginning of a word into command line to receive suggestions on how to finish the word. Autocomplete populates entire English dictionary into a tries data structure. 
