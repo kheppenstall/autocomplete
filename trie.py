@@ -38,7 +38,7 @@ class Trie:
     if node.includes_letter(fragment[0]):
       next_node = node.links[fragment[0]]
       if len(fragment) == 1: return next_node
-      node_finder(fragment[1:], next_node)
+      self.node_finder(fragment[1:], next_node)
     else: return None
 
   def populate(self, file):

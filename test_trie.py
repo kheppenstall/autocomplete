@@ -31,17 +31,26 @@ class TrieTestCase(unittest.TestCase):
     self.assertEqual(['a', 'pi', 'pizza'], words)
 
 
-  def test_it_can_take_fragment_and_give_recomendations(self):
+  def test_it_can_take_letter_and_give_recomendations(self):
     trie = Trie()
     trie.insert('pi')
     trie.insert('pizza')
     trie.insert('a')
-    words = sorted(trie.suggest("p"))
+    words = sorted(trie.suggest('p'))
 
     self.assertEqual(['pi', 'pizza'], words)
 
-  def test_it_populates_file(self):
-    trie = Trie()
-    trie.populate('words.txt')
+  # def test_it_can_take_fragment_and_give_recomendations(self):
+  #   trie = Trie()
+  #   trie.insert('pi')
+  #   trie.insert('pizza')
+  #   trie.insert('a')
+  #   words = sorted(trie.suggest('pi'))
 
-    self.assertEqual(235886, len(trie.find_words()))
+  #   self.assertEqual(['pizza'], words)
+
+  # def test_it_populates_file(self):
+  #   trie = Trie()
+  #   trie.populate('words.txt')
+
+  #   self.assertEqual(235886, len(trie.find_words()))
