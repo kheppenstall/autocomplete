@@ -7,7 +7,7 @@ Tech Stack: Python, Unittest
 
 Follow these steps to try it out in the command line (make sure you have Python installed):
 
-1. Clone the repository: git clone https://github.com/kheppenstall/complete_me.git
+1. Clone the repository: git clone https://github.com/kheppenstall/autocomplete.git
 1. `cd` into the directory `autocomplete`
 1. Start an interpreter session by typing `python` in the command line.
 1. Type the following commands into the irb session:
@@ -23,7 +23,7 @@ Follow these steps to try it out in the command line (make sure you have Python 
 
 Follow these steps to run the tests:
 
-1. Clone the repository: git clone https://github.com/kheppenstall/complete_me.git
+1. Clone the repository: git clone https://github.com/kheppenstall/autocomplete.git
 1. `cd` into the directory `autcomplete`
 1. Install pytest: `pip install pytest` in the command line.
 1. Run `pytest` in the command line to run test suite.
