@@ -64,8 +64,36 @@ class TrieTestCase(unittest.TestCase):
 
     self.assertEqual([], words)
 
-  def test_it_populates_file(self):
-    trie = Trie()
-    trie.populate('words.txt')
+  # def test_it_populates_file(self):
+  #   trie = Trie()
+  #   trie.populate('words.txt')
 
-    self.assertEqual(235886, len(trie.find_words()))  
+  #   self.assertEqual(235886, len(trie.find_words()))  
+
+  def test_it_increments_weight_when_letter_is_inserted_multiple_times(self):
+    trie = Trie()
+    trie.insert('a')
+    trie.insert('a')
+
+    self.assertEqual(2, trie.root.links['a'].weight)
+
+  def test_it_increments_weight_when_word_is_inserted_multiple_times(self):
+    trie = Trie()
+    trie.insert('pizza')
+    trie.insert('pizza')
+    node = trie.node_finder('pizza')
+
+    self.assertEqual(2, node.weight)
+
+  def test_it_suggests_words_based_on_weight(self):
+    trie = Trie()
+    trie.insert('pizza')
+    trie.insert('pizza')
+    trie.insert('pizza')
+    trie.insert('pi')
+    trie.insert('pi')
+    trie.insert('pizzas')
+
+    self.assertEqual(['pizza', 'pi', 'pizzas'], trie.suggest('p'))
+
+

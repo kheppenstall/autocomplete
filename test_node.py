@@ -46,3 +46,14 @@ class NodeTestCase(unittest.TestCase):
     
     self.assertTrue(node.includes_letter('b'))
     self.assertFalse(node.includes_letter('c'))
+
+  def test_node_defaults_weight_to_zero(self):
+    node = Node('c')
+
+    self.assertEqual(0, node.weight)
+
+  def test_node_increments_weights(self):
+    node = Node('c')
+    node.weight += 1
+
+    self.assertEqual(1, node.weight)

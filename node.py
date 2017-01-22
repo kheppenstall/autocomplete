@@ -3,6 +3,7 @@ class Node:
     self.letter = letter
     self.links = {}
     self.terminator = False
+    self.weight = 0
 
   def add_link(self, letter):
     self.links[letter] = Node(letter)
