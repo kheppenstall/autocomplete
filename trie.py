@@ -54,4 +54,10 @@ class Trie:
     dictionary_file = open(file, 'r')
     for word in dictionary_file.readlines():
       self.insert(word.rstrip('\n'))
+
+  def populate_text(self, file):
+    with open(file) as f:
+      words = [word for line in f for word in line.split()]
+      for word in words:
+        self.insert(word.rstrip('\n'))
       
